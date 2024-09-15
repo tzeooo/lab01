@@ -1,58 +1,150 @@
-1. PACMAN C++
-2. O varianta simpla a jocului legendar PacMan utilizand limba de programare C++.
-3. Regulile jocului:
 
-Controlul Șarpelui:
-Jucătorul controlează mișcarea șarpelui folosind săgețile de pe tastatură (sau alte controale, în funcție de implementare).
-Șarpele se mișcă într-o direcție constantă până când jucătorul schimbă direcția.
+---
 
-Obiective și Scor:
-Scopul jocului este de a mânca "mere" sau alte obiecte care apar pe ecran.
-Fiecare obiect mâncat face ca șarpele să crească în lungime.
-Cu cât șarpele este mai lung, cu atât este mai dificil să navighezi, deoarece trebuie să eviți coliziunile cu propriul corp.
+## **Pacman**
+Acest proiect reprezintă implementarea jocului clasic **Pacman** folosind limbajul de programare C++. Jocul implică controlul personajului principal, Pacman, care trebuie să navigheze printr-un labirint și să evite fantomele în timp ce colectează puncte.
 
-Coliziuni:
-Dacă șarpele se lovește de marginea ecranului sau de propriul corp, jocul se termină.
-Unele variante ale jocului permit șarpelui să traverseze marginile ecranului și să apară pe partea opusă.
+### **Regulile jocului:**
+1. Jucătorul controlează mișcarea lui Pacman folosind săgețile de pe tastatură (sau alte controale configurate).
+2. Obiectivul jocului este de a colecta toate punctele din labirint fără a fi prins de fantome.
+3. Dacă Pacman este prins de o fantomă, jocul se termină.
+4. Fantomele urmăresc Pacman în timp real, fiecare cu un model diferit de mișcare.
 
-Creșterea Șarpelui:
-După ce mănâncă un obiect, șarpele crește în lungime.
-Lungimea șarpelui este de obicei afișată ca scor în joc.
+### **Fișierele de antet și clasele principale:**
 
-Temporizare și Viteză:
-În multe versiuni, jocul devine mai dificil pe măsură ce șarpele crește, deoarece viteza de mișcare a șarpelui poate crește.
+#### **Board.hpp**
+- **Clasa `Board`:**
+  - Această clasă reprezintă tabloul pe care se desfășoară jocul.
+  - Conține două variabile: `_width` și `_height`, care definesc dimensiunile tablei.
+  - Metode:
+    - `GetWidth()` – returnează lățimea tablei.
+    - `GetHeight()` – returnează înălțimea tablei.
 
-Obiecte Speciale:
-Unele variante ale jocului includ obiecte speciale care pot oferi puncte suplimentare sau alte beneficii temporare.
+```cpp
+#pragma once
 
-Controale și Interfață:
-În majoritatea cazurilor, jucătorul poate schimba direcția șarpelui în timp real, dar nu poate schimba direcția în mod direct invers (de exemplu, dacă șarpele se mișcă la dreapta, nu poate merge direct la stânga).
+class Board {
+    int _width;
+    int _height;
+public:
+    Board(int width = 20, int height = 20);
+    int GetWidth() const;
+    int GetHeight() const;
+};
+```
 
-4. Point (structură):
+#### **Direction.hpp**
+- **Enumerația `Direction`:**
+  - Reprezintă direcțiile în care Pacman și fantomele se pot deplasa: `Up`, `Left`, `Right`, `Down`.
 
-Definiție: struct Point { int x; int y; };
-Explicație: Reprezintă o poziție pe un plan 2D, folosind două coordonate întregi (x și y). Este folosită pentru a localiza obiecte pe tabla de joc, cum ar fi poziția șarpelui și a merelor.
-Apple (clasă):
+```cpp
+#pragma once
 
-Definiție: class Apple { Point _position; ... };
-Explicație: Reprezintă un obiect de tip măr care apare pe tabla de joc. Include un atribut de tip Point care definește poziția mărului pe tablă.
-Direction (enumerație):
+enum class Direction {
+    Up, Left, Right, Down
+};
+```
 
-Definiție: enum class Direction { Top, Left, Right, Bottom };
-Explicație: Reprezintă direcțiile în care șarpele se poate mișca. Valorile enumerației indică direcțiile posibile: sus (Top), stânga (Left), dreapta (Right), și jos (Bottom).
-Snake (clasă):
+#### **GameEngine.hpp**
+- **Clasa `GameEngine`:**
+  - Aceasta gestionează logica principală a jocului.
+  - Contine obiectele principale ale jocului: `_pacman`, `_ghost`, și `_board`.
+  - Metode:
+    - `Init()` – inițializează jocul.
+    - `Run()` – rulează jocul.
 
-Definiție: class Snake { Point _segments[100]; int _nr_segments; ... };
-Explicație: Reprezintă șarpele în joc. Utilizează un array de Point pentru a stoca segmentele șarpelui și un întreg pentru a ține evidența numărului de segmente. Această clasă gestionează mișcarea șarpelui, mărimea și interacțiunile cu obiectele din joc.
-Board (clasă):
+```cpp
+#pragma once
 
-Definiție: class Board { int _width; int _height; ... };
-Explicație: Reprezintă tabla de joc pe care șarpele se mișcă. Stochează lățimea (_width) și înălțimea (_height) tablei și este folosită pentru a verifica limitele și dimensiunile jocului.
-GameEngine (clasă):
+#include "pacman.hpp"
+#include "ghost.hpp"
+#include "board.hpp"
 
-Definiție: class GameEngine { Apple _apple; Snake _snake; Board _board; ... };
-Explicație: Reprezintă motorul jocului care controlează logica jocului. Include obiecte de tip Apple, Snake, și Board, și gestionează inițializarea și rularea jocului.
-Painter (clasă):
+class GameEngine {
+    Pacman _pacman;
+    Ghost _ghost;
+    Board _board;
+public:
+    GameEngine();
+    void Init();
+    void Run();
+};
+```
 
-Definiție: class Painter { void DrawImage(Point topLeft, Point bottomRight, char** image); ... };
-Explicație: Reprezintă un component de desenare care se ocupă cu afișarea graficelor și textului pe ecran. Utilizează Point pentru a defini pozițiile și dimensiunile imaginilor de desenat.
+#### **Ghost.hpp**
+- **Clasa `Ghost`:**
+  - Reprezintă o fantomă din joc, având o poziție pe tablă.
+  - Metode:
+    - `Move(int dx, int dy)` – mută fantoma pe tablă cu un offset dat.
+
+```cpp
+#pragma once
+
+#include "point.hpp"
+
+class Ghost {
+    Point _position;
+public:
+    Ghost();
+    Ghost(const Point& position);
+    Point GetPosition() const;
+    void Move(int dx, int dy);
+};
+```
+
+#### **Pacman.hpp**
+- **Clasa `Pacman`:**
+  - Reprezintă personajul principal, Pacman.
+  - Atribute:
+    - `_position`: poziția curentă.
+    - `_direction`: direcția curentă de mișcare.
+  - Metode:
+    - `Move(Direction direction)` – mută Pacman în direcția specificată.
+
+```cpp
+#pragma once
+
+#include "point.hpp"
+#include "direction.hpp"
+
+class Pacman {
+    Point _position;
+    Direction _direction;
+public:
+    Pacman();
+    Pacman(const Point& position);
+    void Move(Direction direction);
+    Point GetPosition() const;
+};
+```
+
+#### **Painter.hpp**
+- **Clasa `Painter`:**
+  - Se ocupă de afișarea graficelor pe ecran, inclusiv poziționarea imaginilor și textului.
+
+```cpp
+#pragma once
+
+#include "point.hpp"
+
+class Painter {
+public:
+    void DrawImage(Point topLeft, Point bottomRight, char** image);
+    void WriteText(Point position, const char* text);
+};
+```
+
+#### **Point.hpp**
+- **Structura `Point`:**
+  - Reprezintă o poziție pe tablă, având două coordonate: `x` și `y`.
+
+```cpp
+#pragma once
+
+struct Point {
+    int x;
+    int y;
+};
+```
+
+---
