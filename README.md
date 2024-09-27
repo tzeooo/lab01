@@ -152,17 +152,17 @@ Pentru a construi proiectul meu **Pacman**, ne asigurăm că avem instalat `g++`
 
 1. **Deschid terminalul** și navigheaz la directorul proiectului meu:
 ```bash
-   cd /c/Users/Cristian/lab01
+cd /c/Users/Cristian/lab01
 ```
 
 
 2. **Compilez proiectul** folosind `make`:
 ```bash
-    make
+make
 ```
 3.**Execut** jocul:
 ```bash
-    ./pacman_game
+./pacman_game
 ```
 4. **Curățăm** fișierele obiect și executabilul:
 ```bash
