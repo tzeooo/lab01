@@ -146,5 +146,28 @@ struct Point {
     int y;
 };
 ```
+### **Modul de construcție a proiectului**
+
+Pentru a construi proiectul meu **Pacman**, ne asigurăm că avem instalat `g++` și `make` pe sistemul tău.
+
+1. **Deschid terminalul** și navigheaz la directorul proiectului meu:
+```bash
+   cd /c/Users/Cristian/lab01
+```
+
+
+2. **Compilez proiectul** folosind `make`:
+```bash
+    make
+```
+3.**Execut** jocul:
+```bash
+    ./pacman_game
+```
+4. **Curățăm** fișierele obiect și executabilul:
+```bash
+make clean
+```
+
 
 ---
