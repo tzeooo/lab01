@@ -1,0 +1,25 @@
+
+# Directoare generate de build
+/build/
+/bin/
+/obj/
+
+# Fișiere de tip executabil
+*.exe
+*.o
+*.out
+
+# Fișiere temporare
+*~ 
+*.tmp
+*.log
+
+# Fișiere de sistem
+.DS_Store
+Thumbs.db
+
+# Fișiere IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
