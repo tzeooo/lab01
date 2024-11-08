@@ -1,12 +1,16 @@
 #pragma once
 #include "point.hpp"
-#include <iostream>
+#include <memory>
 
 class Ghost {
     Point _position;
 public:
     Ghost();
     Ghost(const Point& position);
+    Ghost(const Ghost& other);
+
+    Ghost& operator=(const Ghost& other);
+    bool operator==(const Ghost& other) const;
 
     Point GetPosition() const;
     void Move(int dx, int dy);

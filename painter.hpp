@@ -5,6 +5,6 @@
 
 class Painter : public AbstractPainter {
 public:
-    virtual void DrawImage(Point topLeft, Point bottomRight, std::vector<std::string>& image);
+    virtual void DrawImage(Point topLeft, Point bottomRight, const std::vector<std::string>& image);
     virtual void WriteText(Point position, const std::string& text);
 };

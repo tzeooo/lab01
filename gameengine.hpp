@@ -4,11 +4,12 @@
 #include "ghost.hpp"
 #include "board.hpp"
 #include <memory>
+#include <vector>
 
 class GameEngine {
-    std::shared_ptr<Pacman> _pacman;
-    std::shared_ptr<Ghost> _ghost;
-    std::shared_ptr<Board> _board;
+    std::unique_ptr<Pacman> _pacman;
+    std::vector<std::unique_ptr<Ghost>> _ghosts;
+    Board _board;
 
 public:
     GameEngine();

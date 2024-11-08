@@ -1,7 +1,7 @@
 #include "painter.hpp"
 #include <iostream>
 
-void Painter::DrawImage(Point topLeft, Point bottomRight, std::vector<std::string>& image) {
+void Painter::DrawImage(Point topLeft, Point bottomRight, const std::vector<std::string>& image) {
     for (int y = topLeft.y; y <= bottomRight.y && y < image.size(); ++y) {
         for (int x = topLeft.x; x <= bottomRight.x && x < image[y].size(); ++x) {
             std::cout << image[y][x];
