@@ -1,21 +1,9 @@
 #include "ghost.hpp"
+#include <memory>
 
 Ghost::Ghost() : _position{0, 0} {}
 
 Ghost::Ghost(const Point& position) : _position(position) {}
-
-Ghost::Ghost(const Ghost &other) : _position(other._position) {}
-
-Ghost& Ghost::operator=(const Ghost& other) {
-    if (this != &other) {
-        _position = other._position;
-    }
-    return *this;
-}
-
-bool Ghost::operator==(const Ghost& other) const {
-    return _position == other._position;
-}
 
 Point Ghost::GetPosition() const {
     return _position;
