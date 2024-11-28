@@ -1,0 +1,190 @@
+\doxysection{Ghost Class Reference}
+\hypertarget{class_ghost}{}\label{class_ghost}\index{Ghost@{Ghost}}
+
+
+Clasa care reprezintă un \doxylink{class_ghost}{Ghost} din joc. Permite crearea și manipularea obiectului \doxylink{class_ghost}{Ghost}.  
+
+
+
+
+{\ttfamily \#include $<$ghost.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_ghost_a2e38d3c0c8546cceb74777b49a8e3bb7}\label{class_ghost_a2e38d3c0c8546cceb74777b49a8e3bb7} 
+{\bfseries Ghost} ()
+\begin{DoxyCompactList}\small\item\em Constructor implicit pentru \doxylink{class_ghost}{Ghost}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ghost_a4ef603a7190f4075d3a8552cd0b97c72}{Ghost}} (const \mbox{\hyperlink{struct_point}{Point}} \&position)
+\begin{DoxyCompactList}\small\item\em Constructor cu parametru pentru \doxylink{class_ghost}{Ghost}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ghost_ae65cc7b049432f22b79ca57c906d23b6}{Ghost}} (const \mbox{\hyperlink{class_ghost}{Ghost}} \&other)
+\begin{DoxyCompactList}\small\item\em Constructor de copiere pentru \doxylink{class_ghost}{Ghost}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_ghost}{Ghost}} \& \mbox{\hyperlink{class_ghost_a6f148279ed2cb1389f5834b691554a2f}{operator=}} (const \mbox{\hyperlink{class_ghost}{Ghost}} \&other)
+\begin{DoxyCompactList}\small\item\em Operatorul de atribuire pentru \doxylink{class_ghost}{Ghost}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_ghost_aa90549b3aa5148ea84ad5a4bdadddae2}{operator==}} (const \mbox{\hyperlink{class_ghost}{Ghost}} \&other) const
+\begin{DoxyCompactList}\small\item\em Operatorul de comparație pentru \doxylink{class_ghost}{Ghost}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_point}{Point}} \mbox{\hyperlink{class_ghost_a649ff95fb5cb60c2b7d30dd95add360a}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Obține poziția curentă a Ghost-\/ului. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ghost_a4dedbaf56cf096ad0a07ca6e95b93a2d}{Move}} (int dx, int dy)
+\begin{DoxyCompactList}\small\item\em Mută Ghost-\/ul la o nouă poziție. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{class_ghost_a2f201a913f222b3d2ae56ba8621a325e}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{class_ghost}{Ghost}} \&ghost)
+\begin{DoxyCompactList}\small\item\em Supraincarcă operatorul de citire pentru \doxylink{class_ghost}{Ghost}. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_ghost_a6b3312b374a10493494acbd4167941d1}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{class_ghost}{Ghost}} \&ghost)
+\begin{DoxyCompactList}\small\item\em Supraincarcă operatorul de scriere pentru \doxylink{class_ghost}{Ghost}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clasa care reprezintă un \doxylink{class_ghost}{Ghost} din joc. Permite crearea și manipularea obiectului \doxylink{class_ghost}{Ghost}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_ghost_a4ef603a7190f4075d3a8552cd0b97c72}\index{Ghost@{Ghost}!Ghost@{Ghost}}
+\index{Ghost@{Ghost}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{Ghost()}{Ghost()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_ghost_a4ef603a7190f4075d3a8552cd0b97c72} 
+Ghost\+::\+Ghost (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Constructor cu parametru pentru \doxylink{class_ghost}{Ghost}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Poziția inițială a Ghost-\/ului. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ghost_ae65cc7b049432f22b79ca57c906d23b6}\index{Ghost@{Ghost}!Ghost@{Ghost}}
+\index{Ghost@{Ghost}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{Ghost()}{Ghost()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_ghost_ae65cc7b049432f22b79ca57c906d23b6} 
+Ghost\+::\+Ghost (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ghost}{Ghost}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de copiere pentru \doxylink{class_ghost}{Ghost}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Ghost-\/ul care va fi copiat. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ghost_a649ff95fb5cb60c2b7d30dd95add360a}\index{Ghost@{Ghost}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{class_ghost_a649ff95fb5cb60c2b7d30dd95add360a} 
+\mbox{\hyperlink{struct_point}{Point}} Ghost\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obține poziția curentă a Ghost-\/ului. 
+
+\begin{DoxyReturn}{Returns}
+Poziția curentă a Ghost-\/ului. 
+\end{DoxyReturn}
+\Hypertarget{class_ghost_a4dedbaf56cf096ad0a07ca6e95b93a2d}\index{Ghost@{Ghost}!Move@{Move}}
+\index{Move@{Move}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \label{class_ghost_a4dedbaf56cf096ad0a07ca6e95b93a2d} 
+void Ghost\+::\+Move (\begin{DoxyParamCaption}\item[{int}]{dx}{, }\item[{int}]{dy}{}\end{DoxyParamCaption})}
+
+
+
+Mută Ghost-\/ul la o nouă poziție. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dx} & Modificarea pe axa X. \\
+\hline
+{\em dy} & Modificarea pe axa Y. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ghost_a6f148279ed2cb1389f5834b691554a2f}\index{Ghost@{Ghost}!operator=@{operator=}}
+\index{operator=@{operator=}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_ghost_a6f148279ed2cb1389f5834b691554a2f} 
+\mbox{\hyperlink{class_ghost}{Ghost}} \& Ghost\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ghost}{Ghost}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Operatorul de atribuire pentru \doxylink{class_ghost}{Ghost}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Ghost-\/ul care va fi copiat. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referința către obiectul curent. 
+\end{DoxyReturn}
+\Hypertarget{class_ghost_aa90549b3aa5148ea84ad5a4bdadddae2}\index{Ghost@{Ghost}!operator==@{operator==}}
+\index{operator==@{operator==}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_ghost_aa90549b3aa5148ea84ad5a4bdadddae2} 
+bool Ghost\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_ghost}{Ghost}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Operatorul de comparație pentru \doxylink{class_ghost}{Ghost}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Ghost-\/ul cu care se compară obiectul curent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True dacă obiectele sunt egale, altfel false. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_ghost_a6b3312b374a10493494acbd4167941d1}\index{Ghost@{Ghost}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_ghost_a6b3312b374a10493494acbd4167941d1} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{class_ghost}{Ghost}} \&}]{ghost}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Supraincarcă operatorul de scriere pentru \doxylink{class_ghost}{Ghost}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Fluxul de ieșire. \\
+\hline
+{\em ghost} & Obiectul de tip \doxylink{class_ghost}{Ghost} care va fi scris. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fluxul de ieșire. 
+\end{DoxyReturn}
+\Hypertarget{class_ghost_a2f201a913f222b3d2ae56ba8621a325e}\index{Ghost@{Ghost}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Ghost@{Ghost}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_ghost_a2f201a913f222b3d2ae56ba8621a325e} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in}{, }\item[{\mbox{\hyperlink{class_ghost}{Ghost}} \&}]{ghost}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Supraincarcă operatorul de citire pentru \doxylink{class_ghost}{Ghost}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Fluxul de intrare. \\
+\hline
+{\em ghost} & Obiectul de tip \doxylink{class_ghost}{Ghost} care va fi citit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fluxul de intrare. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ghost_8hpp}{ghost.\+hpp}}\item 
+src/ghost.\+cpp\end{DoxyCompactItemize}

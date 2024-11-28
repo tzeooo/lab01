@@ -171,3 +171,26 @@ make clean
 
 
 ---
+
+### **Dependențe:**
+- Compilator : g++
+- Biblioteci externe:
+  - SFML (Simple and Fast Multimedia Library): utilizata pentru gestionarea graficii.
+
+  Pentru a instala SFML urmeaza pasii urmatori:
+
+  Pe LINUX (Ubuntu)
+  ```bash
+  sudo apt-get install libsfml-dev
+  ```
+
+  Pe MacOS (Homebrew):
+  ```bash
+  brew install sfml
+  ```
+
+  Pe Windows:
+  1. Descarca biblioteca SFML de la sfml-dev.org.
+  2. Include fișierele de antet și bibliotecile SFML în proiectul tău, conform ghidului de instalare din documentația oficială SFML.
+
+---

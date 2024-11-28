@@ -1,0 +1,188 @@
+\doxysection{Pacman Class Reference}
+\hypertarget{class_pacman}{}\label{class_pacman}\index{Pacman@{Pacman}}
+
+
+Clasa care reprezintă personajul \doxylink{class_pacman}{Pacman}. Permite manipularea poziției și direcției lui \doxylink{class_pacman}{Pacman}.  
+
+
+
+
+{\ttfamily \#include $<$pacman.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_pacman_a499408baab38f119ebd4f41e90fbe3fe}\label{class_pacman_a499408baab38f119ebd4f41e90fbe3fe} 
+{\bfseries Pacman} ()
+\begin{DoxyCompactList}\small\item\em Constructor implicit pentru \doxylink{class_pacman}{Pacman}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_pacman_a6645c00accdd26189809b244d3d9e06c}{Pacman}} (const \mbox{\hyperlink{struct_point}{Point}} \&position)
+\begin{DoxyCompactList}\small\item\em Constructor cu parametru pentru \doxylink{class_pacman}{Pacman}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_pacman_aef631fda3a66793740ff769705411305}{Pacman}} (const \mbox{\hyperlink{class_pacman}{Pacman}} \&other)
+\begin{DoxyCompactList}\small\item\em Constructor de copiere pentru \doxylink{class_pacman}{Pacman}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_pacman}{Pacman}} \& \mbox{\hyperlink{class_pacman_a3d55845a0f722f96cceca0290c428dd2}{operator=}} (const \mbox{\hyperlink{class_pacman}{Pacman}} \&other)
+\begin{DoxyCompactList}\small\item\em Operatorul de atribuire pentru \doxylink{class_pacman}{Pacman}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_pacman_a86d595c102310521f2a8ffeaad7568e4}{operator==}} (const \mbox{\hyperlink{class_pacman}{Pacman}} \&other) const
+\begin{DoxyCompactList}\small\item\em Operatorul de comparație pentru \doxylink{class_pacman}{Pacman}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pacman_acec19ca91c54410862e28cd4359aed19}{Move}} (\mbox{\hyperlink{direction_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}} direction)
+\begin{DoxyCompactList}\small\item\em Mută \doxylink{class_pacman}{Pacman} în direcția specificată. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_point}{Point}} \mbox{\hyperlink{class_pacman_a13965e95e2525ba2746de79c9a2b4a49}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Obține poziția curentă a lui \doxylink{class_pacman}{Pacman}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{class_pacman_a4b65e89355021b5852f8c84fd8f427d0}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{class_pacman}{Pacman}} \&pacman)
+\begin{DoxyCompactList}\small\item\em Supraincarcă operatorul de citire pentru \doxylink{class_pacman}{Pacman}. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_pacman_a1705b06d55b36bbf31c9479aafde138f}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{class_pacman}{Pacman}} \&pacman)
+\begin{DoxyCompactList}\small\item\em Supraincarcă operatorul de scriere pentru \doxylink{class_pacman}{Pacman}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clasa care reprezintă personajul \doxylink{class_pacman}{Pacman}. Permite manipularea poziției și direcției lui \doxylink{class_pacman}{Pacman}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pacman_a6645c00accdd26189809b244d3d9e06c}\index{Pacman@{Pacman}!Pacman@{Pacman}}
+\index{Pacman@{Pacman}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{Pacman()}{Pacman()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_pacman_a6645c00accdd26189809b244d3d9e06c} 
+Pacman\+::\+Pacman (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_point}{Point}} \&}]{position}{}\end{DoxyParamCaption})}
+
+
+
+Constructor cu parametru pentru \doxylink{class_pacman}{Pacman}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Poziția inițială a lui \doxylink{class_pacman}{Pacman}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pacman_aef631fda3a66793740ff769705411305}\index{Pacman@{Pacman}!Pacman@{Pacman}}
+\index{Pacman@{Pacman}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{Pacman()}{Pacman()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_pacman_aef631fda3a66793740ff769705411305} 
+Pacman\+::\+Pacman (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pacman}{Pacman}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de copiere pentru \doxylink{class_pacman}{Pacman}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Pacman-\/ul care va fi copiat. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pacman_a13965e95e2525ba2746de79c9a2b4a49}\index{Pacman@{Pacman}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \label{class_pacman_a13965e95e2525ba2746de79c9a2b4a49} 
+\mbox{\hyperlink{struct_point}{Point}} Pacman\+::\+Get\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Obține poziția curentă a lui \doxylink{class_pacman}{Pacman}. 
+
+\begin{DoxyReturn}{Returns}
+Poziția curentă a lui \doxylink{class_pacman}{Pacman}. 
+\end{DoxyReturn}
+\Hypertarget{class_pacman_acec19ca91c54410862e28cd4359aed19}\index{Pacman@{Pacman}!Move@{Move}}
+\index{Move@{Move}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \label{class_pacman_acec19ca91c54410862e28cd4359aed19} 
+void Pacman\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{direction_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}}]{direction}{}\end{DoxyParamCaption})}
+
+
+
+Mută \doxylink{class_pacman}{Pacman} în direcția specificată. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & Direcția în care se va mișca \doxylink{class_pacman}{Pacman}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pacman_a3d55845a0f722f96cceca0290c428dd2}\index{Pacman@{Pacman}!operator=@{operator=}}
+\index{operator=@{operator=}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_pacman_a3d55845a0f722f96cceca0290c428dd2} 
+\mbox{\hyperlink{class_pacman}{Pacman}} \& Pacman\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pacman}{Pacman}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Operatorul de atribuire pentru \doxylink{class_pacman}{Pacman}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Pacman-\/ul care va fi copiat. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referința către obiectul curent. 
+\end{DoxyReturn}
+\Hypertarget{class_pacman_a86d595c102310521f2a8ffeaad7568e4}\index{Pacman@{Pacman}!operator==@{operator==}}
+\index{operator==@{operator==}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_pacman_a86d595c102310521f2a8ffeaad7568e4} 
+bool Pacman\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_pacman}{Pacman}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Operatorul de comparație pentru \doxylink{class_pacman}{Pacman}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Pacman-\/ul cu care se compară obiectul curent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True dacă obiectele sunt egale, altfel false. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_pacman_a1705b06d55b36bbf31c9479aafde138f}\index{Pacman@{Pacman}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_pacman_a1705b06d55b36bbf31c9479aafde138f} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out}{, }\item[{const \mbox{\hyperlink{class_pacman}{Pacman}} \&}]{pacman}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Supraincarcă operatorul de scriere pentru \doxylink{class_pacman}{Pacman}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Fluxul de ieșire. \\
+\hline
+{\em pacman} & Obiectul de tip \doxylink{class_pacman}{Pacman} care va fi scris. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fluxul de ieșire. 
+\end{DoxyReturn}
+\Hypertarget{class_pacman_a4b65e89355021b5852f8c84fd8f427d0}\index{Pacman@{Pacman}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Pacman@{Pacman}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_pacman_a4b65e89355021b5852f8c84fd8f427d0} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in}{, }\item[{\mbox{\hyperlink{class_pacman}{Pacman}} \&}]{pacman}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Supraincarcă operatorul de citire pentru \doxylink{class_pacman}{Pacman}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & Fluxul de intrare. \\
+\hline
+{\em pacman} & Obiectul de tip \doxylink{class_pacman}{Pacman} care va fi citit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fluxul de intrare. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{pacman_8hpp}{pacman.\+hpp}}\item 
+src/pacman.\+cpp\end{DoxyCompactItemize}

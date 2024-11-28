@@ -1,0 +1,231 @@
+\chapter{README}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{README@{README}}
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysubsection{\texorpdfstring{{\bfseries{Pacman}}}{{\bfseries{Pacman}}}}\label{md__r_e_a_d_m_e_autotoc_md1}
+Acest proiect reprezintă implementarea jocului clasic {\bfseries{\doxylink{class_pacman}{Pacman}}} folosind limbajul de programare C++. Jocul implică controlul personajului principal, \doxylink{class_pacman}{Pacman}, care trebuie să navigheze printr-\/un labirint și să evite fantomele în timp ce colectează puncte.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysubsubsection{\texorpdfstring{{\bfseries{Regulile jocului\+:}}}{{\bfseries{Regulile jocului\+:}}}}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item Jucătorul controlează mișcarea lui \doxylink{class_pacman}{Pacman} folosind săgețile de pe tastatură (sau alte controale configurate).
+\item Obiectivul jocului este de a colecta toate punctele din labirint fără a fi prins de fantome.
+\item Dacă \doxylink{class_pacman}{Pacman} este prins de o fantomă, jocul se termină.
+\item Fantomele urmăresc \doxylink{class_pacman}{Pacman} în timp real, fiecare cu un model diferit de mișcare.
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysubsubsection{\texorpdfstring{{\bfseries{Fișierele de antet și clasele principale\+:}}}{{\bfseries{Fișierele de antet și clasele principale\+:}}}}\label{md__r_e_a_d_m_e_autotoc_md3}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsubsubsection{\texorpdfstring{{\bfseries{Board.\+hpp}}}{{\bfseries{Board.\+hpp}}}}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\bfseries{Clasa {\ttfamily \doxylink{class_board}{Board}}\+:}}
+\begin{DoxyItemize}
+\item Această clasă reprezintă tabloul pe care se desfășoară jocul.
+\item Conține două variabile\+: {\ttfamily \+\_\+width} și {\ttfamily \+\_\+height}, care definesc dimensiunile tablei.
+\item Metode\+:
+\begin{DoxyItemize}
+\item {\ttfamily Get\+Width()} – returnează lățimea tablei.
+\item {\ttfamily Get\+Height()} – returnează înălțimea tablei.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_board}{Board}}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \_width;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \_height;}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_board_ac8eb296a526f20f8ce052d3b0cd123b7}{Board}}(\textcolor{keywordtype}{int}\ width\ =\ 20,\ \textcolor{keywordtype}{int}\ height\ =\ 20);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_board_a724b52b655d25178a9de9fac6b8c7d36}{GetWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_board_a78cd2cb390f643f40035ba9ff699806a}{GetHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsubsubsection{\texorpdfstring{{\bfseries{Direction.\+hpp}}}{{\bfseries{Direction.\+hpp}}}}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\bfseries{Enumerația {\ttfamily Direction}\+:}}
+\begin{DoxyItemize}
+\item Reprezintă direcțiile în care \doxylink{class_pacman}{Pacman} și fantomele se pot deplasa\+: {\ttfamily Up}, {\ttfamily Left}, {\ttfamily Right}, {\ttfamily Down}.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{direction_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{direction_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa258f49887ef8d14ac268c92b02503aaa}{Up}},\ \mbox{\hyperlink{direction_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa945d5e233cf7d6240f6b783b36a374ff}{Left}},\ \mbox{\hyperlink{direction_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa92b09c7c48c520c3c55e497875da437c}{Right}},\ \mbox{\hyperlink{direction_8hpp_a224b9163917ac32fc95a60d8c1eec3aaa08a38277b0309070706f6652eeae9a53}{Down}}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsubsubsection{\texorpdfstring{{\bfseries{Game\+Engine.\+hpp}}}{{\bfseries{Game\+Engine.\+hpp}}}}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyItemize}
+\item {\bfseries{Clasa {\ttfamily \doxylink{class_game_engine}{Game\+Engine}}\+:}}
+\begin{DoxyItemize}
+\item Aceasta gestionează logica principală a jocului.
+\item Contine obiectele principale ale jocului\+: {\ttfamily \+\_\+pacman}, {\ttfamily \+\_\+ghost}, și {\ttfamily \+\_\+board}.
+\item Metode\+:
+\begin{DoxyItemize}
+\item {\ttfamily Init()} – inițializează jocul.
+\item {\ttfamily Run()} – rulează jocul.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pacman_8hpp}{pacman.hpp}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ghost_8hpp}{ghost.hpp}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{board_8hpp}{board.hpp}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_engine}{GameEngine}}\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_pacman}{Pacman}}\ \_pacman;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_ghost}{Ghost}}\ \_ghost;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_board}{Board}}\ \_board;}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_game_engine_a64c430f74d72e2745646fdbffbd97930}{GameEngine}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_ab7daf2551eca113947559e9f07dae0a7}{Init}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_af54dfc38b867307e07204165cb9119a0}{Run}}();}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsubsubsection{\texorpdfstring{{\bfseries{Ghost.\+hpp}}}{{\bfseries{Ghost.\+hpp}}}}\label{md__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyItemize}
+\item {\bfseries{Clasa {\ttfamily \doxylink{class_ghost}{Ghost}}\+:}}
+\begin{DoxyItemize}
+\item Reprezintă o fantomă din joc, având o poziție pe tablă.
+\item Metode\+:
+\begin{DoxyItemize}
+\item {\ttfamily Move(int dx, int dy)} – mută fantoma pe tablă cu un offset dat.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point_8hpp}{point.hpp}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_ghost}{Ghost}}\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_point}{Point}}\ \_position;}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_ghost_a2e38d3c0c8546cceb74777b49a8e3bb7}{Ghost}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_ghost_a2e38d3c0c8546cceb74777b49a8e3bb7}{Ghost}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\&\ position);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_point}{Point}}\ \mbox{\hyperlink{class_ghost_a649ff95fb5cb60c2b7d30dd95add360a}{GetPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_a4dedbaf56cf096ad0a07ca6e95b93a2d}{Move}}(\textcolor{keywordtype}{int}\ dx,\ \textcolor{keywordtype}{int}\ dy);}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsubsubsection{\texorpdfstring{{\bfseries{Pacman.\+hpp}}}{{\bfseries{Pacman.\+hpp}}}}\label{md__r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyItemize}
+\item {\bfseries{Clasa {\ttfamily \doxylink{class_pacman}{Pacman}}\+:}}
+\begin{DoxyItemize}
+\item Reprezintă personajul principal, \doxylink{class_pacman}{Pacman}.
+\item Atribute\+:
+\begin{DoxyItemize}
+\item {\ttfamily \+\_\+position}\+: poziția curentă.
+\item {\ttfamily \+\_\+direction}\+: direcția curentă de mișcare.
+\end{DoxyItemize}
+\item Metode\+:
+\begin{DoxyItemize}
+\item {\ttfamily Move(\+Direction direction)} – mută \doxylink{class_pacman}{Pacman} în direcția specificată.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point_8hpp}{point.hpp}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{direction_8hpp}{direction.hpp}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_pacman}{Pacman}}\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_point}{Point}}\ \_position;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{direction_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}\ \_direction;}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_pacman_a499408baab38f119ebd4f41e90fbe3fe}{Pacman}}();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{class_pacman_a499408baab38f119ebd4f41e90fbe3fe}{Pacman}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\&\ position);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pacman_acec19ca91c54410862e28cd4359aed19}{Move}}(\mbox{\hyperlink{direction_8hpp_a224b9163917ac32fc95a60d8c1eec3aa}{Direction}}\ direction);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_point}{Point}}\ \mbox{\hyperlink{class_pacman_a13965e95e2525ba2746de79c9a2b4a49}{GetPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsubsubsection{\texorpdfstring{{\bfseries{Painter.\+hpp}}}{{\bfseries{Painter.\+hpp}}}}\label{md__r_e_a_d_m_e_autotoc_md9}
+
+\begin{DoxyItemize}
+\item {\bfseries{Clasa {\ttfamily \doxylink{class_painter}{Painter}}\+:}}
+\begin{DoxyItemize}
+\item Se ocupă de afișarea graficelor pe ecran, inclusiv poziționarea imaginilor și textului.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point_8hpp}{point.hpp}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }\mbox{\hyperlink{class_painter}{Painter}}\ \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_painter_acf91d4f0c86f72fd7afd83abd6617c2d}{DrawImage}}(\mbox{\hyperlink{struct_point}{Point}}\ topLeft,\ \mbox{\hyperlink{struct_point}{Point}}\ bottomRight,\ \textcolor{keywordtype}{char}**\ image);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_painter_a3c544266b5a352ff3388cf2f153d2cfc}{WriteText}}(\mbox{\hyperlink{struct_point}{Point}}\ position,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ text);}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsubsubsection{\texorpdfstring{{\bfseries{Point.\+hpp}}}{{\bfseries{Point.\+hpp}}}}\label{md__r_e_a_d_m_e_autotoc_md10}
+
+\begin{DoxyItemize}
+\item {\bfseries{Structura {\ttfamily \doxylink{struct_point}{Point}}\+:}}
+\begin{DoxyItemize}
+\item Reprezintă o poziție pe tablă, având două coordonate\+: {\ttfamily x} și {\ttfamily y}.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_point}{Point}}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_point_a8c779e11e694b20e0946105a9f5de842}{x}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_point_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}};}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysubsubsection{\texorpdfstring{{\bfseries{Modul de construcție a proiectului}}}{{\bfseries{Modul de construcție a proiectului}}}}\label{md__r_e_a_d_m_e_autotoc_md11}
+Pentru a construi proiectul meu {\bfseries{\doxylink{class_pacman}{Pacman}}}, ne asigurăm că avem instalat {\ttfamily g++} și {\ttfamily make} pe sistemul tău.
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Deschid terminalul}} și navigheaz la directorul proiectului meu\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ /c/Users/Cristian/lab01}
+
+\end{DoxyCode}
+
+\item {\bfseries{Compilez proiectul}} folosind {\ttfamily make}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+ 3.\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\+Execut\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} jocul\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./pacman\_game}
+
+\end{DoxyCode}
+
+\item {\bfseries{Curățăm}} fișierele obiect și executabilul\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ clean}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+ 

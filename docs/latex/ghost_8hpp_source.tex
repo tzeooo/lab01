@@ -1,0 +1,31 @@
+\doxysection{ghost.\+hpp}
+\hypertarget{ghost_8hpp_source}{}\label{ghost_8hpp_source}\index{include/ghost.hpp@{include/ghost.hpp}}
+\mbox{\hyperlink{ghost_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point_8hpp}{point.hpp}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ghost}{Ghost}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{struct_point}{Point}}\ \_position;\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_ghost_a2e38d3c0c8546cceb74777b49a8e3bb7}{Ghost}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{class_ghost_a2e38d3c0c8546cceb74777b49a8e3bb7}{Ghost}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_point}{Point}}\&\ position);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_ghost_a2e38d3c0c8546cceb74777b49a8e3bb7}{Ghost}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ghost}{Ghost}}\&\ other);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_ghost}{Ghost}}\&\ \mbox{\hyperlink{class_ghost_a6f148279ed2cb1389f5834b691554a2f}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ghost}{Ghost}}\&\ other);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_ghost_aa90549b3aa5148ea84ad5a4bdadddae2}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_ghost}{Ghost}}\&\ other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{struct_point}{Point}}\ \mbox{\hyperlink{class_ghost_a649ff95fb5cb60c2b7d30dd95add360a}{GetPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ghost_a4dedbaf56cf096ad0a07ca6e95b93a2d}{Move}}(\textcolor{keywordtype}{int}\ dx,\ \textcolor{keywordtype}{int}\ dy);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ \mbox{\hyperlink{class_ghost_a2f201a913f222b3d2ae56ba8621a325e}{operator>>}}(std::istream\&\ in,\ \mbox{\hyperlink{class_ghost}{Ghost}}\&\ ghost);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_ghost_a6b3312b374a10493494acbd4167941d1}{operator<<}}(std::ostream\&\ out,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_ghost}{Ghost}}\&\ ghost);}
+\DoxyCodeLine{00079\ \};}
+
+\end{DoxyCode}

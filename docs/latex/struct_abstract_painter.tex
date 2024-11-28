@@ -1,0 +1,75 @@
+\doxysection{Abstract\+Painter Class Reference}
+\hypertarget{struct_abstract_painter}{}\label{struct_abstract_painter}\index{AbstractPainter@{AbstractPainter}}
+
+
+Clasa abstractă pentru desenarea imaginilor și scrierea textelor. Clasa furnizează metode pentru desenarea imaginilor în diferite puncte și scrierea textului.  
+
+
+
+
+{\ttfamily \#include $<$abstract\+\_\+painter.\+hpp$>$}
+
+Inheritance diagram for Abstract\+Painter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{struct_abstract_painter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{struct_abstract_painter_a50eac225cfe48599b4c7fd7e322fb152}{Draw\+Image}} (\mbox{\hyperlink{struct_point}{Point}} top\+Left, \mbox{\hyperlink{struct_point}{Point}} bottom\+Right, std\+::vector$<$ std\+::string $>$ \&image)=0
+\begin{DoxyCompactList}\small\item\em Desenează o imagine pe o zonă definită de două puncte. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{struct_abstract_painter_af378907efa1bb0174d98619dcbbf6092}{Write\+Text}} (\mbox{\hyperlink{struct_point}{Point}} position, const std\+::string \&text)=0
+\begin{DoxyCompactList}\small\item\em Scrie text la o poziție specificată. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clasa abstractă pentru desenarea imaginilor și scrierea textelor. Clasa furnizează metode pentru desenarea imaginilor în diferite puncte și scrierea textului. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_abstract_painter_a50eac225cfe48599b4c7fd7e322fb152}\index{AbstractPainter@{AbstractPainter}!DrawImage@{DrawImage}}
+\index{DrawImage@{DrawImage}!AbstractPainter@{AbstractPainter}}
+\doxysubsubsection{\texorpdfstring{DrawImage()}{DrawImage()}}
+{\footnotesize\ttfamily \label{struct_abstract_painter_a50eac225cfe48599b4c7fd7e322fb152} 
+virtual void Abstract\+Painter\+::\+Draw\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{top\+Left}{, }\item[{\mbox{\hyperlink{struct_point}{Point}}}]{bottom\+Right}{, }\item[{std\+::vector$<$ std\+::string $>$ \&}]{image}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Desenează o imagine pe o zonă definită de două puncte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top\+Left} & Punctul din colțul stânga sus al imaginii. \\
+\hline
+{\em bottom\+Right} & Punctul din colțul dreapta jos al imaginii. \\
+\hline
+{\em image} & Vector de șiruri care reprezintă imaginea. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{struct_abstract_painter_af378907efa1bb0174d98619dcbbf6092}\index{AbstractPainter@{AbstractPainter}!WriteText@{WriteText}}
+\index{WriteText@{WriteText}!AbstractPainter@{AbstractPainter}}
+\doxysubsubsection{\texorpdfstring{WriteText()}{WriteText()}}
+{\footnotesize\ttfamily \label{struct_abstract_painter_af378907efa1bb0174d98619dcbbf6092} 
+virtual void Abstract\+Painter\+::\+Write\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_point}{Point}}}]{position}{, }\item[{const std\+::string \&}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Scrie text la o poziție specificată. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Poziția unde va fi scris textul. \\
+\hline
+{\em text} & Textul care va fi scris. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_painter_a3c544266b5a352ff3388cf2f153d2cfc}{Painter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{abstract__painter_8hpp}{abstract\+\_\+painter.\+hpp}}\end{DoxyCompactItemize}

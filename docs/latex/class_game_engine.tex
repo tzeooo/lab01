@@ -1,0 +1,32 @@
+\doxysection{Game\+Engine Class Reference}
+\hypertarget{class_game_engine}{}\label{class_game_engine}\index{GameEngine@{GameEngine}}
+
+
+Clasa care gestionează logica jocului. Aceasta controlează obiectele \doxylink{class_pacman}{Pacman} și \doxylink{class_ghost}{Ghost} și interacțiunea acestora cu tabla de joc.  
+
+
+
+
+{\ttfamily \#include $<$gameengine.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_engine_a64c430f74d72e2745646fdbffbd97930}\label{class_game_engine_a64c430f74d72e2745646fdbffbd97930} 
+{\bfseries Game\+Engine} ()
+\begin{DoxyCompactList}\small\item\em Constructor implicit pentru \doxylink{class_game_engine}{Game\+Engine}. Inițializează obiectele jocului. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_engine_ab7daf2551eca113947559e9f07dae0a7}\label{class_game_engine_ab7daf2551eca113947559e9f07dae0a7} 
+void {\bfseries Init} ()
+\begin{DoxyCompactList}\small\item\em Inițializează jocul și setează toate obiectele în pozițiile lor de început. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_engine_af54dfc38b867307e07204165cb9119a0}\label{class_game_engine_af54dfc38b867307e07204165cb9119a0} 
+void {\bfseries Run} ()
+\begin{DoxyCompactList}\small\item\em Rulează logica jocului. La fiecare pas, actualizează pozițiile personajelor și verifică condițiile de câștig sau pierdere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Clasa care gestionează logica jocului. Aceasta controlează obiectele \doxylink{class_pacman}{Pacman} și \doxylink{class_ghost}{Ghost} și interacțiunea acestora cu tabla de joc. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{gameengine_8hpp}{gameengine.\+hpp}}\item 
+src/gameengine.\+cpp\end{DoxyCompactItemize}

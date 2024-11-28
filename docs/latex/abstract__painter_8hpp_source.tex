@@ -1,0 +1,16 @@
+\doxysection{abstract\+\_\+painter.\+hpp}
+\hypertarget{abstract__painter_8hpp_source}{}\label{abstract__painter_8hpp_source}\index{include/abstract\_painter.hpp@{include/abstract\_painter.hpp}}
+\mbox{\hyperlink{abstract__painter_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point_8hpp}{point.hpp}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_abstract_painter}{AbstractPainter}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_abstract_painter_a50eac225cfe48599b4c7fd7e322fb152}{DrawImage}}(\mbox{\hyperlink{struct_point}{Point}}\ topLeft,\ \mbox{\hyperlink{struct_point}{Point}}\ bottomRight,\ std::vector<std::string>\&\ image)\ =\ 0;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{struct_abstract_painter_af378907efa1bb0174d98619dcbbf6092}{WriteText}}(\mbox{\hyperlink{struct_point}{Point}}\ position,\ \textcolor{keyword}{const}\ std::string\&\ text)\ =\ 0;}
+\DoxyCodeLine{00033\ \};}
+
+\end{DoxyCode}

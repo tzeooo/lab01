@@ -1,0 +1,26 @@
+\doxysection{gameengine.\+hpp}
+\hypertarget{gameengine_8hpp_source}{}\label{gameengine_8hpp_source}\index{include/gameengine.hpp@{include/gameengine.hpp}}
+\mbox{\hyperlink{gameengine_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pacman_8hpp}{pacman.hpp}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{ghost_8hpp}{ghost.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{board_8hpp}{board.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game_engine}{GameEngine}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ std::unique\_ptr<Pacman>\ \_pacman;\ }
+\DoxyCodeLine{00023\ \ \ \ \ std::vector<std::unique\_ptr<Ghost>>\ \_ghosts;\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_board}{Board}}\ \_board;\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_game_engine_a64c430f74d72e2745646fdbffbd97930}{GameEngine}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_ab7daf2551eca113947559e9f07dae0a7}{Init}}();}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_game_engine_af54dfc38b867307e07204165cb9119a0}{Run}}();}
+\DoxyCodeLine{00043\ \};}
+
+\end{DoxyCode}
