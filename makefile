@@ -1,28 +1,23 @@
-all: pacman_game
+# Compilator
+CXX = g++
+CXXFLAGS = -I./include -I./libs/SFML/include  # Include SFML și alte fișiere de antet
 
-pacman_game: main.o gameengine.o pacman.o ghost.o board.o painter.o point.o
-	g++ -o pacman_game main.o gameengine.o pacman.o ghost.o board.o painter.o point.o
+# LDFLAGS - specifică unde să caute fișierele `.a`
+LDFLAGS = -L./libs/SFML/lib -lsfml-graphics -lsfml-window -lsfml-system # Lincare cu bibliotecile SFML
 
-main.o:
-	g++ main.cpp -o main.o -c
+# Sursa
+SRC = src/main.cpp src/gameengine.cpp src/pacman.cpp src/ghost.cpp src/board.cpp src/painter.cpp src/point.cpp
+OBJ = $(SRC:.cpp=.o)
+OUT = pacman_game
 
-gameengine.o:
-	g++ gameengine.cpp -o gameengine.o -c
+# Regula principală pentru generarea executabilului
+$(OUT): $(OBJ)
+	$(CXX) $(OBJ) -o $(OUT) $(LDFLAGS)
 
-pacman.o:
-	g++ pacman.cpp -o pacman.o -c
+# Regula pentru compilarea fișierelor sursă în fișiere obiect
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-ghost.o:
-	g++ ghost.cpp -o ghost.o -c
-
-board.o:
-	g++ board.cpp -o board.o -c
-
-painter.o:
-	g++ painter.cpp -o painter.o -c
-
-point.o:
-	g++ point.cpp -o point.o -c
-
+# Curățarea fișierelor intermediare
 clean:
-	rm -f *.o pacman_game
+	rm -f $(OBJ) $(OUT)
